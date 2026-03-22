@@ -17,3 +17,13 @@ data "azurerm_network_interface" "main" {
   name                = "${var.prefix}-nic"
   resource_group_name = data.azurerm_resource_group.example.name
 }
+
+data "azurerm_public_ip" "main" {
+  name                = "${var.prefix}-publicip"
+  resource_group_name = data.azurerm_resource_group.example.name
+}
+
+data "azurerm_virtual_machine" "main" {
+  name                = "${var.prefix}-vm"
+  resource_group_name = data.azurerm_resource_group.example.name
+}
