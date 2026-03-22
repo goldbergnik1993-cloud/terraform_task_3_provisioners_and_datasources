@@ -3,8 +3,7 @@ variable "prefix" {
 }
 
 variable "resource_group_name" {
-  description = "Имя группы ресурсов, созданной вручную в портале"
-  default     = "tfvmex-resources" 
+  default = "tfvmex-resources"
 }
 
 variable "admin_username" {
@@ -12,5 +11,6 @@ variable "admin_username" {
 }
 
 variable "admin_password" {
-  default = "Password1234!"
+  description = "Пароль администратора (вводится при запуске)"
+  sensitive   = true
 }

@@ -29,12 +29,11 @@ resource "azurerm_virtual_machine" "main" {
     disable_password_authentication = false
   }
 
-  connection {
+connection {
     type     = "ssh"
     user     = var.admin_username
     password = var.admin_password
-    # Если ты не в локальной сети Azure, замени на public_ip_address
-    host     = data.azurerm_network_interface.main.private_ip_address 
+    host     = data.azurerm_network_interface.main.public_ip_address
   }
 
   provisioner "file" {
